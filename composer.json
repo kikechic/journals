@@ -1,0 +1,54 @@
+{
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "nunomaduro/collision": "^6.0",
+    "nunomaduro/larastan": "^2.0.1",
+    "orchestra/testbench": "^7.0",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-laravel": "^1.1",
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpunit/phpunit": "^9.5",
+    "spatie/laravel-ray": "^1.26"
+  },
+  "require": {
+    "php": "^8.0",
+    "spatie/laravel-package-tools": "^1.13.0",
+    "illuminate/contracts": "^9.0",
+    "barryvdh/laravel-dompdf": "^v2.0",
+    "illuminate/http": "^5.5|^6|^7|^8|^9",
+    "illuminate/support": "^5.5|^6|^7|^8|^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kikechi\\Journals\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kikechi\\Journals\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kikechi\\Journals\\JournalServiceProvider"
+      ],
+      "aliases": {
+        "Invoice": "Kikechi\\Journals\\Facades\\Journal"
+      }
+    }
+  }
+}
