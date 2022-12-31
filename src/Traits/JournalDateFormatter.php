@@ -6,11 +6,11 @@ use Carbon\Carbon;
 
 trait JournalDateFormatter
 {
-    public Carbon $date;
+    public string|Carbon $date;
 
     public string $date_format;
 
-    public function date(Carbon $date): self
+    public function date(string|Carbon $date): self
     {
         $this->date = $date;
 
@@ -26,7 +26,11 @@ trait JournalDateFormatter
 
     public function getDate(): mixed
     {
-        return $this->date->format($this->date_format);
+        if ($this->date instanceof Carbon) {
+            return $this->date->format($this->date_format);
+        }
+
+        return $this->date;
     }
 
 }
