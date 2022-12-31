@@ -59,7 +59,7 @@ class JournalServiceProvider extends ServiceProvider
     }
 
     /**
-     * Setup the configuration for Journal.
+     * Set up the configuration for Journal.
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class JournalServiceProvider extends ServiceProvider
     }
 
     /**
-     * Setup the resource publishing groups for Invoices.
+     * Set up the resource publishing groups for Invoices.
      *
      * @return void
      */
@@ -78,17 +78,17 @@ class JournalServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publishing the configuration file.
             $this->publishes([
-                __DIR__ . '/../config/journals.php' => config_path('journals.php'),
+                __DIR__ . '/../config/journals.php' => config_path(path: 'journals.php'),
             ], 'journals.config');
 
             // Publishing the views.
             $this->publishes([
-                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/journals'),
+                __DIR__ . '/../resources/views' => base_path(path: 'resources/views/vendor/journals'),
             ], 'journals.views');
 
             // Publishing the translation files.
             $this->publishes([
-                __DIR__ . '/../lang' => resource_path('lang/vendor/journals'),
+                __DIR__ . '/../lang' => base_path(path: 'lang/vendor/journals'), //resource_path('lang/vendor/journals'),
             ], 'journals.translations');
         }
     }
@@ -100,7 +100,7 @@ class JournalServiceProvider extends ServiceProvider
      */
     protected function registerServices(): void
     {
-        $this->app->singleton('invoice', function ($app) {
+        $this->app->singleton('journal', function ($app) {
             return new Journal;
         });
     }
@@ -127,6 +127,6 @@ class JournalServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['invoice'];
+        return ['journal'];
     }
 }
