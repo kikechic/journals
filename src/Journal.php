@@ -52,9 +52,15 @@ class Journal
 
     public string $currency;
 
-    public float $total_debits;
+    /**
+     * @var float
+     */
+    public $total_debits = 0.0;
 
-    public float $total_credits;
+    /**
+     * @var float
+     */
+    public $total_credits = 0.0;
 
     public int $table_columns;
 
