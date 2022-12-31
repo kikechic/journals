@@ -65,4 +65,11 @@ class JournalItem
     {
         $this->credit = $this->entry_type === 'C' ? $this->amount : null;
     }
+
+    public function currency(string $currency): self
+    {
+        $this->currency = $currency;
+
+        return $this;
+    }
 }
