@@ -39,7 +39,10 @@ class Journal
 
     public string $notes;
 
-    public string $logo;
+    /**
+     * @var string
+     */
+    public $logo;
 
     public mixed $debit;
 
