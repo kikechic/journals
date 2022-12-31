@@ -69,7 +69,7 @@ class JournalItem
     {
         $this->credit = $this->entry_type === 'C' ? $this->amount : null;
 
-        $this;
+        return $this;
     }
 
     public function currency(string $currency): self
