@@ -124,12 +124,9 @@ trait JournalHelpers
 
     protected function calculate(): self
     {
-        $total_debit_amount   = null;
-        $total_credit_amount = null;
-
-        $this->items->each(function ($item) use (&$total_debit_amount, &$total_credit_amount) {
-            $total_debit_amount += $item->debit;
-            $total_credit_amount += $item->credit;
+        $this->items->each(function ($item) {
+            $this->total_debits += $item->debit;
+            $this->total_credits += $item->credit;
         });
 
         $this->applyColspan();
