@@ -160,11 +160,6 @@
             </h4>
         </td>
         <td class="border-0 pl-0">
-            @if($journal->status)
-                <h4 class="text-uppercase cool-gray">
-                    <strong>{{ $journal->status }}</strong>
-                </h4>
-            @endif
             <p>{{ __('journals::journal.serial') }} <strong>{{ $journal->getSerialNumber() }}</strong></p>
             <p>{{ __('journals::journal.date') }}: <strong>{{ $journal->getDate() }}</strong></p>
         </td>
