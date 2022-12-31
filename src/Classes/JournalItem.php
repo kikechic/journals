@@ -58,14 +58,18 @@ class JournalItem
         return $this;
     }
 
-    public function debit(): void
+    public function debit(): self
     {
         $this->debit = $this->entry_type === 'D' ? $this->amount : null;
+
+        return $this;
     }
 
-    public function  credit(): void
+    public function  credit(): self
     {
         $this->credit = $this->entry_type === 'C' ? $this->amount : null;
+
+        $this;
     }
 
     public function currency(string $currency): self
