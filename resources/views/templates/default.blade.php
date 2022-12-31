@@ -176,7 +176,6 @@
         </th>
         <th class="border-0" style="width: 3%"></th>
         <th class="border-0 pl-0 party-header">
-            {{ __('journals::journal.buyer') }}
         </th>
     </tr>
     </thead>
