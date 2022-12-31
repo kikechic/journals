@@ -270,10 +270,10 @@
         <td colspan="{{ $journal->table_columns - 3 }}" class="border-0"></td>
         <td class="text-right pl-0">{{ __('journals::journal.total_amount') }}</td>
         <td class="text-right pr-0 total-amount">
-            {{ $journal->credit_total_amount }}
+            {{ $journal->total_debits }}
         </td>
         <td class="text-right pr-0 total-amount">
-            {{ $journal->credit_total_amount }}
+            {{ $journal->total_credits }}
         </td>
     </tr>
     </tbody>
