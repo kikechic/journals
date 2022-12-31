@@ -20,6 +20,8 @@ class JournalItem
 
     public string $currency;
 
+    public string $invoice_date;
+
     /**
      * InvoiceItem constructor.
      */
@@ -69,6 +71,13 @@ class JournalItem
     public function currency(string $currency): self
     {
         $this->currency = $currency;
+
+        return $this;
+    }
+
+    public function invoiceDate(string $date): self
+    {
+        $this->invoice_date = $date;
 
         return $this;
     }
