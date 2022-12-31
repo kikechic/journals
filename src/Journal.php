@@ -13,7 +13,7 @@ use Kikechi\Journals\Classes\JournalParty;
 use Kikechi\Journals\Contracts\JournalPartyContract;
 use Kikechi\Journals\Traits\JournalCurrencyFormatter;
 use Kikechi\Journals\Traits\JournalDateFormatter;
-use Kikechi\Journals\Traits\JournalInvoiceHelpers;
+use Kikechi\Journals\Traits\JournalHelpers;
 use Kikechi\Journals\Traits\JournalSavesFiles;
 use Kikechi\Journals\Traits\JournalSerialNumberFormatter;
 
@@ -21,7 +21,7 @@ class Journal
 {
     use JournalCurrencyFormatter;
     use JournalDateFormatter;
-    use JournalInvoiceHelpers;
+    use JournalHelpers;
     use JournalSavesFiles;
     use JournalSerialNumberFormatter;
 
@@ -119,7 +119,7 @@ class Journal
         return new JournalParty($attributes);
     }
 
-    public static function makeItem(string $description = '') : JournalItem
+    public static function makeItem(string $description = ''): JournalItem
     {
         return (new JournalItem())->description($description);
     }
