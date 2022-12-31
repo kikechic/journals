@@ -55,7 +55,10 @@ class Journal
 
     public int $table_columns;
 
-    public Pdf $pdf;
+    /**
+     * @var Pdf
+     */
+    public $pdf;
 
     public string $output;
 
