@@ -257,10 +257,10 @@
                 {{ $item->currency }}
             </td>
             <td class="text-right">
-                {{ $item->debit_amount }}
+                {{ $item->debit }}
             </td>
             <td class="text-right">
-                {{ $item->credit_amount }}
+                {{ $item->credit }}
             </td>
         </tr>
     @endforeach
