@@ -2,6 +2,8 @@
 
 namespace Kikechi\Journals\Traits;
 
+use Illuminate\Support\Facades\App;
+
 use NumberFormatter;
 
 trait JournalCurrencyFormatter
